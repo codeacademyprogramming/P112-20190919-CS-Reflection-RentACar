@@ -35,10 +35,14 @@
             // 
             // dgvOrders
             // 
+            this.dgvOrders.AllowUserToAddRows = false;
+            this.dgvOrders.AllowUserToDeleteRows = false;
+            this.dgvOrders.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CarModel});
-            this.dgvOrders.Location = new System.Drawing.Point(12, 45);
+            this.dgvOrders.GridColor = System.Drawing.Color.Maroon;
+            this.dgvOrders.Location = new System.Drawing.Point(12, 146);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersWidth = 62;
             this.dgvOrders.RowTemplate.Height = 28;

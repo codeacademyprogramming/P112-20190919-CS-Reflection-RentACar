@@ -24,11 +24,16 @@ namespace RentACar.Forms
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            List<Order> orders = _dbRent.Orders.Include("Car.Model.Manufacturer").Include("User").ToList();
+            List<Order> orders = _dbRent.Orders.Include("Car.Model.Manufacturer").Include("User").Where(o => o.User.Firstname.Contains("eee")).ToList();
 
             foreach (Order item in orders)
             {
                 dgvOrders.Rows.Add(item.Car.Model.Name);
+
+                if (item.RentEndDate < DateTime.Now)
+                {
+                    dgvOrders.Rows[dgvOrders.Rows.Count - 1].DefaultCellStyle.BackColor = Color.IndianRed;
+                }
             }
         }
     }
